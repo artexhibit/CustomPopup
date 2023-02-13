@@ -146,6 +146,9 @@ class PopupView: UIView {
         } completion: { [weak self] _ in
             guard let self = self else { return }
             self.removeFromSuperview()
+            PopupQueueManager.shared.popupViewsData.removeFirst()
+            PopupQueueManager.shared.hasDisplayingPopup = false
+            PopupQueueManager.shared.showNextPopupView()
         }
     }
     

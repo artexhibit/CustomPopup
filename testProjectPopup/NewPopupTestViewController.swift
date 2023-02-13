@@ -3,9 +3,6 @@ import UIKit
 
 class NewPopupTestViewController: UIViewController {
     
-    let popupView = PopupView()
-    let popupViewSecond = PopupView()
-    
     let testMessages: [String] = [
         "Abra",
         "Abrakadabraaaaaaaaaa"
@@ -68,13 +65,16 @@ class NewPopupTestViewController: UIViewController {
             btn.widthAnchor.constraint(equalToConstant: 200.0),
             btn.heightAnchor.constraint(equalToConstant: 50.0),
         ])
-        
     }
     
     @objc func tapped(_ sender: Any) {
         let msg = testMessages[testIDX % testMessages.count]
-        popupView.showPopup(title: "Test \(testIDX)", message: msg, symbol: "spinner", type: .manual)
-        //popupView.changePopupData(title: "New Title", message: "NewDataaaaaaaaaaaaaaaaaaaaa", symbol: "square.and.arrow.up", type: .manual)
+        PopupQueueManager.shared.addPopupToQueue(title: "Test \(testIDX)", description: msg, symbol: "spinner", type: .manual)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            PopupQueueManager.shared.changePopupData(title: "New Title", message: "NewDataaaaaaaaaaaaaaaaaaaaa", symbol: "square.and.arrow.up", type: .auto)
+            PopupQueueManager.shared.addPopupToQueue(title: "Test \(self.testIDX)", description: msg, symbol: "spinner", type: .auto)
+        }
         testIDX += 1
     }
 }

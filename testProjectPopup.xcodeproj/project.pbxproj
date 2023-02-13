@@ -16,6 +16,7 @@
 		78B4055B29990306005097F7 /* NewPopupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4055A29990306005097F7 /* NewPopupTestViewController.swift */; };
 		78B4055D29990399005097F7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4055C29990399005097F7 /* PopupView.swift */; };
 		78B4055F299903FC005097F7 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B4055E299903FC005097F7 /* PopupView.xib */; };
+		78E8259F299AB09300E733D8 /* PopupQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8259E299AB09300E733D8 /* PopupQueueManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		78B4055A29990306005097F7 /* NewPopupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPopupTestViewController.swift; sourceTree = "<group>"; };
 		78B4055C29990399005097F7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		78B4055E299903FC005097F7 /* PopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
+		78E8259E299AB09300E733D8 /* PopupQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupQueueManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				78B40546299902D3005097F7 /* AppDelegate.swift */,
 				78B40548299902D3005097F7 /* SceneDelegate.swift */,
 				78B4054A299902D3005097F7 /* ViewController.swift */,
+				78E8259E299AB09300E733D8 /* PopupQueueManager.swift */,
 				78B4055C29990399005097F7 /* PopupView.swift */,
 				78B4055A29990306005097F7 /* NewPopupTestViewController.swift */,
 				78B4055E299903FC005097F7 /* PopupView.xib */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B4055B29990306005097F7 /* NewPopupTestViewController.swift in Sources */,
+				78E8259F299AB09300E733D8 /* PopupQueueManager.swift in Sources */,
 				78B4054B299902D3005097F7 /* ViewController.swift in Sources */,
 				78B40547299902D3005097F7 /* AppDelegate.swift in Sources */,
 				78B4055D29990399005097F7 /* PopupView.swift in Sources */,
