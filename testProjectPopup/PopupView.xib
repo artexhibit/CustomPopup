@@ -8,13 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupView" customModule="testPopup" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupView" customModule="testProjectPopup" customModuleProvider="target">
             <connections>
+                <outlet property="changeDescriptionLabel" destination="X30-fT-wii" id="XkT-w1-EDd"/>
+                <outlet property="changeLabelLeftC" destination="EqP-oX-Sbm" id="PNU-Rq-yyY"/>
                 <outlet property="descriptionLabel" destination="G3H-cQ-dH7" id="e6p-FX-jll"/>
                 <outlet property="labelLeftC" destination="RnQ-zr-ncV" id="L9G-cz-vmL"/>
                 <outlet property="labelView" destination="l2X-wG-09a" id="Mcs-56-ikf"/>
                 <outlet property="loadSpinner" destination="jZ1-4p-XSq" id="SlO-2U-Qqf"/>
                 <outlet property="popupView" destination="kse-pV-zuk" id="QH2-5G-wXQ"/>
+                <outlet property="secondChangeDescriptionLabel" destination="ig1-JE-Shg" id="u0m-1b-YfH"/>
                 <outlet property="secondDescriptionLabel" destination="DNZ-gw-uWE" id="bUQ-Lp-azT"/>
                 <outlet property="symbol" destination="b6w-wL-w9q" id="MQy-yJ-Vhx"/>
                 <outlet property="titleLabel" destination="g0g-0z-EZb" id="9CK-Wd-aPm"/>
@@ -53,7 +56,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2X-wG-09a">
                                         <rect key="frame" x="0.0" y="20" width="153" height="20"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWU-sB-64M">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWU-sB-64M" userLabel="Show Scroll View">
                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Sample Message that is long enough it will need to wrap onto multiple lines." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3H-cQ-dH7">
@@ -85,12 +88,48 @@
                                                     </mask>
                                                 </variation>
                                             </scrollView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jQ-LO-06U" userLabel="Change Scroll View">
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="20"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Sample Message that is long enough it will need to wrap onto multiple lines." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X30-fT-wii">
+                                                        <rect key="frame" x="0.0" y="0.0" width="589" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second A Sample Message that is long enough it will need to wrap onto multiple lines." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig1-JE-Shg" userLabel="Second Не удается загрузить данные. Проверьте соединение с интернетом">
+                                                        <rect key="frame" x="629" y="0.0" width="651" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ig1-JE-Shg" firstAttribute="top" secondItem="6jQ-LO-06U" secondAttribute="top" id="AqN-g4-4e1"/>
+                                                    <constraint firstItem="X30-fT-wii" firstAttribute="leading" secondItem="6jQ-LO-06U" secondAttribute="leading" id="EqP-oX-Sbm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="X30-fT-wii" secondAttribute="bottom" id="H78-ip-5aF"/>
+                                                    <constraint firstItem="X30-fT-wii" firstAttribute="top" secondItem="6jQ-LO-06U" secondAttribute="top" id="b7u-Bu-cvg"/>
+                                                    <constraint firstItem="X30-fT-wii" firstAttribute="centerX" secondItem="6jQ-LO-06U" secondAttribute="centerX" id="dUh-ws-QkL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ig1-JE-Shg" secondAttribute="trailing" id="hFd-4o-r0g"/>
+                                                    <constraint firstItem="ig1-JE-Shg" firstAttribute="leading" secondItem="X30-fT-wii" secondAttribute="trailing" constant="40" id="tgi-4q-HNO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ig1-JE-Shg" secondAttribute="bottom" id="woi-aL-wYq"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="dUh-ws-QkL"/>
+                                                    </mask>
+                                                </variation>
+                                            </scrollView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="6jQ-LO-06U" firstAttribute="top" secondItem="l2X-wG-09a" secondAttribute="top" id="2BW-IM-Kyh"/>
+                                            <constraint firstItem="6jQ-LO-06U" firstAttribute="leading" secondItem="l2X-wG-09a" secondAttribute="leading" id="4b8-v7-3C2"/>
                                             <constraint firstAttribute="bottom" secondItem="pWU-sB-64M" secondAttribute="bottom" id="CRD-Jv-UmG"/>
                                             <constraint firstAttribute="trailing" secondItem="pWU-sB-64M" secondAttribute="trailing" id="Q7O-o6-Qar"/>
                                             <constraint firstItem="pWU-sB-64M" firstAttribute="top" secondItem="l2X-wG-09a" secondAttribute="top" id="ayt-KG-xjO"/>
                                             <constraint firstItem="pWU-sB-64M" firstAttribute="leading" secondItem="l2X-wG-09a" secondAttribute="leading" id="eCc-2U-T9n"/>
+                                            <constraint firstAttribute="bottom" secondItem="6jQ-LO-06U" secondAttribute="bottom" id="rDI-3S-45h"/>
+                                            <constraint firstAttribute="trailing" secondItem="6jQ-LO-06U" secondAttribute="trailing" id="vh5-Ms-UMv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -138,3 +177,4 @@
         <image name="paperplane" catalog="system" width="128" height="119"/>
     </resources>
 </document>
+
