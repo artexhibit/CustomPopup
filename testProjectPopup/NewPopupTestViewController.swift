@@ -71,9 +71,11 @@ class NewPopupTestViewController: UIViewController {
         let msg = testMessages[testIDX % testMessages.count]
         PopupQueueManager.shared.addPopupToQueue(title: "Test \(testIDX)", description: msg, symbol: "spinner", type: .manual)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            PopupQueueManager.shared.changePopupData(title: "New Title", message: msg, symbol: "square.and.arrow.up", type: .auto)
-            //PopupQueueManager.shared.addPopupToQueue(title: "Test \(self.testIDX)", description: msg, symbol: "spinner", type: .auto)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            PopupQueueManager.shared.changePopupDataInQueue(title: "New Title", message: msg, symbol: "square.and.arrow.up", type: .auto)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            PopupQueueManager.shared.addPopupToQueue(title: "Test \(self.testIDX)", description: msg, symbol: "spinner", type: .manual)
         }
         testIDX += 1
     }

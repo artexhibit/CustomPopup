@@ -119,7 +119,7 @@ class PopupView: UIView {
         
         self.configureChangeLabels()
         DispatchQueue.main.async {
-            self.performChangeScrollFor(type: type, change: true)
+            self.performChangeScrollFor(type: type)
         }
     }
     
@@ -147,7 +147,7 @@ class PopupView: UIView {
         }
     }
     
-    private func performChangeScrollFor(type: BehaviourType, change: Bool = false) {
+    private func performChangeScrollFor(type: BehaviourType) {
         if isChangeScrollable ?? false {
             scrollChangeLabel()
             if type == .auto {
@@ -160,7 +160,8 @@ class PopupView: UIView {
         }
     }
     
-    func hidePopup(afterSeconds delay: TimeInterval = 0.0) {
+    func hidePopup(afterSeconds delay: TimeInterval = 0.0, animSpeed: Double = 0.3) {
+        self.animationDuration = animSpeed
         self.timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(self.animateOut), userInfo: nil, repeats: false)
     }
     
